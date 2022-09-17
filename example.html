@@ -1,0 +1,33 @@
+<link href="./select.css" rel="stylesheet">
+<div class="kalenux-select-holder">
+    <select class="kalenux-selects table-filter" data-type="select" data-name="limit" id="table_show" data-placeholder="Gösterim sayısı">
+        <option value="10">10</option> 
+        <option value="20">20</option>
+        <option value="40">40</option>
+        <option value="80">80</option>
+    </select>
+</div>
+<script>
+    var firer = [];
+
+    function setElems(a, b) {
+        var c, d, i;
+        c = document.getElementsByClassName(a);
+        d = c.length;
+        for (i = 0; i < d; i++) {
+            b(c[0]);
+        }
+    }
+</script>
+<script src="./select.js" defer></script>
+<script>
+    document.body.onload = function() {
+        var a, i;
+        a = firer.length
+        for (i = 0; i < a; i++) {
+            if (firer[i])
+                firer[i]();
+        }
+        firer = null;
+    }
+</script>
